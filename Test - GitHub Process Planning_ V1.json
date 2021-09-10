@@ -43,7 +43,7 @@
             "selector":"> g:nth-child(1) > g:nth-child(3) > circle:nth-child(8)"
          },
          "target":{
-            "id":"b6221bb8-774a-4b8f-a42e-1b80831c6c5e",
+            "id":"e8b324e9-5fdd-4a74-9e72-4c864e27ebfe",
             "port":"w",
             "selector":"> g:nth-child(1) > g:nth-child(3) > circle:nth-child(5)"
          },
@@ -106,6 +106,37 @@
          }
       },
       {
+         "type":"springcm.Link",
+         "source":{
+            "id":"e8b324e9-5fdd-4a74-9e72-4c864e27ebfe",
+            "port":"e",
+            "selector":"> g:nth-child(1) > g:nth-child(3) > circle:nth-child(8)"
+         },
+         "target":{
+            "id":"b6221bb8-774a-4b8f-a42e-1b80831c6c5e",
+            "port":"w",
+            "selector":"> g:nth-child(1) > g:nth-child(3) > circle:nth-child(5)"
+         },
+         "router":{
+            "name":"manhattan",
+            "args":{
+               "excludeTypes":[
+                  "springcm.Group",
+                  "springcm.Lane"
+               ]
+            }
+         },
+         "id":"80f972c4-2e0b-4a79-90aa-af21f8d3277d",
+         "z":1000004,
+         "name":{
+            "type":"String",
+            "value":"Link 4"
+         },
+         "attrs":{
+            
+         }
+      },
+      {
          "size":{
             "width":100,
             "height":100
@@ -113,8 +144,8 @@
          "content":"",
          "type":"springcm.Circle",
          "position":{
-            "x":86,
-            "y":70
+            "x":-89,
+            "y":67
          },
          "angle":0,
          "activityName":"StartActivity",
@@ -329,6 +360,52 @@
                      "draggable":true,
                      "preDefined":true
                   }
+               },
+               {
+                  "type":"Xml",
+                  "value":{
+                     "name":"ResponseVariable",
+                     "displayName":"ResponseVariable",
+                     "description":"",
+                     "displayType":"CustomXml",
+                     "schema":{
+                        "nodes":[
+                           {
+                              "name":"root",
+                              "type":"element",
+                              "dataType":"string",
+                              "guid":"c1bb2965-1104-4b10-99b3-6dda65326c89",
+                              "isRoot":true
+                           }
+                        ]
+                     },
+                     "sortable":true,
+                     "editable":true,
+                     "editableValue":true,
+                     "deletable":true,
+                     "draggable":true,
+                     "preDefined":false,
+                     "isContent":false,
+                     "isLocal":false
+                  }
+               },
+               {
+                  "type":"Number",
+                  "value":{
+                     "name":"ResponseStatusCode",
+                     "displayName":"ResponseStatusCode",
+                     "description":"",
+                     "displayType":"Number",
+                     "schema":{
+                        
+                     },
+                     "sortable":true,
+                     "editable":true,
+                     "editableValue":true,
+                     "deletable":true,
+                     "draggable":true,
+                     "preDefined":false
+                  }
                }
             ]
          },
@@ -451,8 +528,8 @@
          "content":"",
          "type":"springcm.Step",
          "position":{
-            "x":266,
-            "y":69
+            "x":89,
+            "y":66
          },
          "angle":0,
          "activityName":"UpdateStatusActivity",
@@ -579,6 +656,117 @@
             },
             "rect":{
                "fill":"#e98824"
+            },
+            ".step-container":{
+               "data-error-state":false
+            }
+         }
+      },
+      {
+         "size":{
+            "width":100,
+            "height":100
+         },
+         "content":"",
+         "type":"springcm.Step",
+         "position":{
+            "x":245,
+            "y":65
+         },
+         "angle":0,
+         "activityName":"HttpClientActivity",
+         "group":"engineActivities",
+         "icon":{
+            "path":"http_client.svg#Dark",
+            "color":"#f7b618"
+         },
+         "id":"e8b324e9-5fdd-4a74-9e72-4c864e27ebfe",
+         "z":2000005,
+         "name":{
+            "type":"String",
+            "value":"Http Client 1"
+         },
+         "stepDescription":{
+            "type":"String",
+            "value":""
+         },
+         "requestContent":{
+            "type":"String",
+            "value":""
+         },
+         "protocolVersion":{
+            "type":"String",
+            "value":"1.1"
+         },
+         "method":{
+            "type":"String",
+            "value":"GGET"
+         },
+         "url":{
+            "type":"String",
+            "value":"Test Endpoint"
+         },
+         "headers":{
+            "type":"InputUpdate",
+            "value":[
+               
+            ]
+         },
+         "contentEncoding":{
+            "type":"String",
+            "value":"us-ascii"
+         },
+         "responseEncoding":{
+            "type":"String",
+            "value":"Auto"
+         },
+         "responseVariable":{
+            "type":"Variable",
+            "value":{
+               "type":"Xml",
+               "value":"ResponseVariable"
+            }
+         },
+         "responseStatusCodeVariable":{
+            "type":"Variable",
+            "value":{
+               "type":"Number",
+               "value":"ResponseStatusCode"
+            }
+         },
+         "attrs":{
+            ".steptext":{
+               "ref-y":".66",
+               "y-alignment":"middle",
+               "text":"Http Client 1",
+               "lineHeight":"1.4em"
+            },
+            ".description":{
+               "opacity":0,
+               "ref":".step-container",
+               "ref-x":0.5,
+               "ref-dy":0
+            },
+            ".descriptionbox":{
+               "width":0,
+               "height":0,
+               "rx":0,
+               "ry":0,
+               "x":0,
+               "y":0
+            },
+            ".descriptiontext":{
+               "text":""
+            },
+            "use":{
+               "xlink:href":"/atlassupport/scripts/jointjs/svg/http_client.svg#Dark"
+            },
+            "svg":{
+               "color":"#f7b618",
+               "fill":"#fff"
+            },
+            "rect":{
+               "fill":"#f7b618"
             },
             ".step-container":{
                "data-error-state":false
